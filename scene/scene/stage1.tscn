@@ -1,0 +1,218 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://assets/sprites/background/bacground1.png" type="Texture" id=1]
+[ext_resource path="res://scene/playerwm.tscn" type="PackedScene" id=2]
+[ext_resource path="res://script/some_person_script/PathFollow2D.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprites/guy img/walk right/009.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/guy img/walk right/010.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/guy img/walk right/011.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/guy img/walk right/012.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/guy img/walk right/013.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/guy img/walk right/014.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/guy img/walk right/015.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/guy img/walk right/016.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/guy img/walk right/017.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/guy2/right/009.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/guy2/right/010.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/guy2/right/011.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/guy2/right/012.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/guy2/right/013.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/guy2/right/014.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/guy2/right/015.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/guy2/right/016.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/guy2/right/017.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/guy4/down/000.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/guy4/down/001.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/guy4/down/002.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/guy4/down/003.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/guy4/down/004.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/guy4/down/005.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/guy4/down/006.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/guy4/down/007.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/guy4/down/008.png" type="Texture" id=30]
+[ext_resource path="res://scene/coin.tscn" type="PackedScene" id=31]
+[ext_resource path="res://script/entrydoor1.gd" type="Script" id=32]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1028.6, 18.7046 )
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -658.676, -49.96, 0, 0, 0, 0, 1046.51, -42.7499 )
+}
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 40.8856
+
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 994.66, 313.429, 0, 0, 0, 0, -1032, 332.065 )
+}
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 39.8969
+
+[sub_resource type="Curve2D" id=8]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 364.874, -108.844, 0, 0, 0, 0, 356.886, 854.293, 0, 0, 0, 0, 473.767, 858.394 )
+}
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 59.0769, 72.8519 )
+
+[node name="stage1" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+editor/display_folded = true
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+editor/display_folded = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 0, -617.929 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 583.6, -161.839 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -1662.52, 451.187 )
+rotation = -0.467586
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 299.156, -539.462 )
+rotation = -0.467586
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 0, 613.025 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -1039.69, 93.1796 )
+rotation = 1.56712
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 1039.69, 112.796 )
+rotation = 1.57024
+shape = SubResource( 1 )
+
+[node name="playerwm" parent="." instance=ExtResource( 2 )]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+editor/display_folded = true
+position = Vector2( -658.676, -49.96 )
+rotation = 0.00422821
+rotate = false
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Path2D/PathFollow2D"]
+frames = SubResource( 3 )
+animation = "walk"
+frame = 1
+playing = true
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Path2D/PathFollow2D/AnimatedSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/AnimatedSprite/KinematicBody2D"]
+position = Vector2( -4.74997, 73.1499 )
+shape = SubResource( 4 )
+
+[node name="Path2D2" type="Path2D" parent="."]
+editor/display_folded = true
+curve = SubResource( 5 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2( 994.66, 313.429 )
+rotate = false
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Path2D2/PathFollow2D"]
+frames = SubResource( 6 )
+frame = 3
+playing = true
+flip_h = true
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Path2D2/PathFollow2D/AnimatedSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D2/PathFollow2D/AnimatedSprite/KinematicBody2D"]
+position = Vector2( 7.36646, 72.4364 )
+shape = SubResource( 7 )
+
+[node name="Path2D3" type="Path2D" parent="."]
+editor/display_folded = true
+curve = SubResource( 8 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
+position = Vector2( 364.874, -108.844 )
+rotation = 1.55073
+rotate = false
+loop = false
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Path2D3/PathFollow2D"]
+rotation = -1.55854
+frames = SubResource( 9 )
+playing = true
+
+[node name="coin" parent="." instance=ExtResource( 31 )]
+position = Vector2( -805.655, 385.881 )
+
+[node name="coin2" parent="." instance=ExtResource( 31 )]
+position = Vector2( -216.992, -100.983 )
+
+[node name="coin3" parent="." instance=ExtResource( 31 )]
+position = Vector2( 854.109, -61.149 )
+
+[node name="coin5" parent="." instance=ExtResource( 31 )]
+position = Vector2( 199.055, 443.419 )
+
+[node name="coin6" parent="." instance=ExtResource( 31 )]
+position = Vector2( 628.381, 279.656 )
+
+[node name="coin4" parent="." instance=ExtResource( 31 )]
+position = Vector2( -261.253, 261.952 )
+
+[node name="entrydoor1" type="Area2D" parent="."]
+position = Vector2( 628.381, 279.656 )
+script = ExtResource( 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entrydoor1"]
+position = Vector2( -1330.17, -379.477 )
+rotation = -0.424419
+shape = SubResource( 10 )
+[connection signal="body_entered" from="entrydoor1" to="entrydoor1" method="_on_entrydoor1_body_entered"]

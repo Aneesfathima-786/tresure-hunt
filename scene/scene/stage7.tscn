@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/sprites/background/bg5.png" type="Texture" id=1]
+[ext_resource path="res://scene/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene/map.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1036.71, 21.4406 )
+
+[node name="stage7" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+editor/display_folded = true
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 3.7948, 618.549 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -850.445, -73.3446 )
+rotation = -0.0243138
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -3.7948, -618.549 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 1047.36, -341.53 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -1047.36, -125.228 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -348.51, -516.583 )
+rotation = 3.80654
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 1265.71, 760.958 )
+rotation = 3.80654
+shape = SubResource( 1 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_left = -1024
+limit_top = -600
+limit_right = 1024
+limit_bottom = 600
+editor_draw_limits = true
+
+[node name="map" parent="." instance=ExtResource( 3 )]
+BAT_MAN = 2
+
+[node name="map3" parent="." instance=ExtResource( 3 )]
+position = Vector2( -926.893, 29.4251 )
+BAT_MAN = 3
+
+[node name="map2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -887.659, 387.431 )

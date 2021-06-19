@@ -1,0 +1,67 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://script/Thinker trone.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/items/i3/000.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/items/i3/001.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/items/i3/002.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/items/i3/003.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/items/i3/004.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/items/i2/000.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/items/i2/001.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/items/i2/002.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/items/i2/003.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/items/i2/004.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/items/i1/000.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/items/i1/001.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/items/i1/002.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/items/i1/003.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/items/i1/004.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/items/i4/000.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/items/i4/001.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/items/i4/002.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/items/i4/003.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/items/i4/004.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/items/i4/005.png" type="Texture" id=22]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 53.6032
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "AF72",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "AF71",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "AF7",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "AF73",
+"speed": 5.0
+} ]
+
+[node name="Thinker trone" type="Area2D"]
+editor/display_folded = true
+position = Vector2( -50.3507, 196.368 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "AF7"
+frame = 3
+[connection signal="body_entered" from="." to="." method="_on_Thinker_trone_body_entered"]

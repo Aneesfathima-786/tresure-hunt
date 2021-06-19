@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/sprites/background/g4.png" type="Texture" id=1]
+[ext_resource path="res://scene/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene/diama.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/firex.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 534.148, 10 )
+
+[node name="T_level4" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+editor/display_folded = true
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -10.5119, 191.316 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -12.6143, -161.883 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 477.238, -94.6067 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -485.648, -117.733 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -845.153, 21.0237 )
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_left = -1024
+limit_top = -600
+limit_right = 1024
+limit_bottom = 600
+
+[node name="diama" parent="." instance=ExtResource( 3 )]
+position = Vector2( 765.263, 269.104 )
+AF = 4
+
+[node name="firex" parent="." instance=ExtResource( 4 )]
+
+[node name="firex3" parent="." instance=ExtResource( 4 )]
+
+[node name="firex2" parent="." instance=ExtResource( 4 )]

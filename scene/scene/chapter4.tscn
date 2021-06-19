@@ -1,0 +1,106 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://script/chapter4.gd" type="Script" id=1]
+[ext_resource path="res://assets/all dialogs/ch4/ps.png" type="Texture" id=2]
+[ext_resource path="res://assets/all dialogs/ch4/5.png" type="Texture" id=3]
+[ext_resource path="res://assets/all dialogs/ch4/6.png" type="Texture" id=4]
+[ext_resource path="res://assets/all dialogs/ch4/3.png" type="Texture" id=5]
+[ext_resource path="res://assets/all dialogs/ch4/4.png" type="Texture" id=6]
+[ext_resource path="res://assets/all dialogs/ch4/2.png" type="Texture" id=7]
+[ext_resource path="res://assets/all dialogs/ch4/1.png" type="Texture" id=8]
+[ext_resource path="res://assets/all dialogs/ch4/8.png" type="Texture" id=9]
+[ext_resource path="res://assets/all dialogs/ch4/7.png" type="Texture" id=10]
+[ext_resource path="res://assets/all dialogs/ch4/10.png" type="Texture" id=11]
+[ext_resource path="res://assets/all dialogs/ch4/13.png" type="Texture" id=12]
+[ext_resource path="res://assets/all dialogs/ch4/9.png" type="Texture" id=13]
+[ext_resource path="res://assets/all dialogs/ch4/12.png" type="Texture" id=14]
+[ext_resource path="res://assets/all dialogs/ch4/11.png" type="Texture" id=15]
+[ext_resource path="res://scene/nextx.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scene/backx.tscn" type="PackedScene" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "8",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "10",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "13",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "9",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "12",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "11",
+"speed": 5.0
+} ]
+
+[node name="chapter4" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Sprite"]
+current = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "13"
+
+[node name="nextx" parent="." instance=ExtResource( 16 )]
+
+[node name="backx" parent="." instance=ExtResource( 17 )]
+[connection signal="pressed" from="nextx" to="." method="_on_nextx_pressed"]
+[connection signal="pressed" from="backx" to="." method="_on_backx_pressed"]

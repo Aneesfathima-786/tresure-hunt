@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://script/chapter1.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/background/ts.png" type="Texture" id=2]
+[ext_resource path="res://assets/all dialogs/ch1/5.png" type="Texture" id=3]
+[ext_resource path="res://assets/all dialogs/ch1/6.png" type="Texture" id=4]
+[ext_resource path="res://assets/all dialogs/ch1/3.png" type="Texture" id=5]
+[ext_resource path="res://assets/all dialogs/ch1/4.png" type="Texture" id=6]
+[ext_resource path="res://assets/all dialogs/ch1/2.png" type="Texture" id=7]
+[ext_resource path="res://assets/all dialogs/ch1/1.png" type="Texture" id=8]
+[ext_resource path="res://scene/nextx.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scene/backx.tscn" type="PackedScene" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+} ]
+
+[node name="chapter1" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Sprite"]
+current = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "6"
+
+[node name="nextx" parent="." instance=ExtResource( 9 )]
+
+[node name="backx" parent="." instance=ExtResource( 10 )]
+[connection signal="pressed" from="nextx" to="." method="_on_nextx_pressed"]
+[connection signal="pressed" from="backx" to="." method="_on_backx_pressed"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/font/Kenney Thick.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[node name="a" type="Button"]
+margin_left = -56.5446
+margin_top = 190.126
+margin_right = 28.4554
+margin_bottom = 271.126
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_hover = Color( 0.0666667, 0.588235, 0.933333, 1 )
+custom_colors/font_color_pressed = Color( 0.952941, 0.0352941, 0.0352941, 1 )
+text = "A"

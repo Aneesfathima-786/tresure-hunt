@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/sprites/background/g3.png" type="Texture" id=1]
+[ext_resource path="res://scene/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene/diama.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/arx.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 558.721, 10 )
+
+[node name="T_level3" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+editor/display_folded = true
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -27.3135, 190.493 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -20.1034, -160.998 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 477.392, -141.171 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -486.956, -160.998 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( -865.21, 25.2353 )
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_left = -1024
+limit_top = -600
+limit_right = 1024
+limit_bottom = 600
+
+[node name="diama" parent="." instance=ExtResource( 3 )]
+position = Vector2( 785.899, 266.773 )
+AF = 3
+
+[node name="arx" parent="." instance=ExtResource( 4 )]
+
+[node name="arx5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 685.515, 12.4052 )
+
+[node name="arx2" parent="." instance=ExtResource( 4 )]
+position = Vector2( -344.539, 49.417 )
+rotation = 3.14159
+
+[node name="arx3" parent="." instance=ExtResource( 4 )]
+position = Vector2( -924.897, 54.7171 )
+rotation = 3.14159
+
+[node name="arx4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 302.071, 60.0171 )
+rotation = 3.14159

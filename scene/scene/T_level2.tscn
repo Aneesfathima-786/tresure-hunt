@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://script/T_level2.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/background/g2.png" type="Texture" id=2]
+[ext_resource path="res://scene/diama.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://script/hr.gd" type="Script" id=5]
+[ext_resource path="res://assets/sprites/items/arrow.png" type="Texture" id=6]
+[ext_resource path="res://scene/Enemycarbra.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 584.867, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 30.0126, 316.947 )
+
+[node name="T_level2" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+editor/display_folded = true
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 20.5263, 189.406 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 12.1168, -161.69 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 475.479, -55.8352 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -487.196, -49.8435 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="diama" parent="." instance=ExtResource( 3 )]
+position = Vector2( 766.945, 263.637 )
+AF = 2
+
+[node name="player" parent="." instance=ExtResource( 4 )]
+position = Vector2( -854.824, -39.9451 )
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2( -331.544, 7.98901 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_left = -1024
+limit_top = -600
+limit_right = 1024
+limit_bottom = 600
+
+[node name="hr" type="Node2D" parent="."]
+position = Vector2( 683.709, 31.8004 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite2" type="Sprite" parent="hr"]
+position = Vector2( -7.42665, -520.286 )
+scale = Vector2( 1.85981, 8.14329 )
+texture = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="hr"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hr/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="Enemycarbra" parent="." instance=ExtResource( 7 )]

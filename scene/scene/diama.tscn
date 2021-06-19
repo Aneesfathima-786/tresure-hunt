@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://script/diama.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/items/005.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/items/003.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/items/002.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/items/006.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/items/004.png" type="Texture" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 37.8431
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "blue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "green",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "red",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "yellow",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "rose",
+"speed": 5.0
+} ]
+
+[node name="diama" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 59.2198, -238.73 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 56.9371, -242.389 )
+scale = Vector2( 0.446897, 0.403516 )
+frames = SubResource( 2 )
+animation = "yellow"
+[connection signal="body_entered" from="." to="." method="_on_diama_body_entered"]

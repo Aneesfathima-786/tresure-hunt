@@ -1,0 +1,139 @@
+[gd_scene load_steps=42 format=2]
+
+[ext_resource path="res://script/enemy.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/covid1/right/009.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/covid1/right/010.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/covid1/right/011.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/covid1/right/012.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/covid1/right/013.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/covid1/right/014.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/covid1/right/015.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/covid1/right/016.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/covid1/right/017.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/covid1/up/018.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/covid1/up/019.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/covid1/up/020.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/covid1/up/021.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/covid1/up/022.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/covid1/up/023.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/covid1/up/024.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/covid1/up/025.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/covid1/up/026.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/items/invi.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/covid1/idle/037.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/covid1/idle/038.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/covid1/attack/028.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/covid1/attack/027.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/covid1/attack/029.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/covid1/attack/030.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/covid1/down/000.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/covid1/down/001.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/covid1/down/002.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/covid1/down/003.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/covid1/down/004.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/covid1/down/005.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprites/covid1/down/006.png" type="Texture" id=33]
+[ext_resource path="res://assets/sprites/covid1/down/007.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprites/covid1/down/008.png" type="Texture" id=35]
+[ext_resource path="res://script/em1.gd" type="Script" id=36]
+[ext_resource path="res://assets/sprites/items/alrt.png" type="Texture" id=37]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "right",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "up",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "g",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "attack_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "attack_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "attack_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "attack_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "down",
+"speed": 10.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 90.3152
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 199.342
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 37 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "done",
+"speed": 5.0
+} ]
+
+[node name="enemy" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "attack_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.89366, 26.5977 )
+shape = SubResource( 2 )
+
+[node name="em1" type="Area2D" parent="."]
+script = ExtResource( 36 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="em1"]
+position = Vector2( -6.23396, -4.07526 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="em1"]
+position = Vector2( -2.01029, -7.03661 )
+scale = Vector2( 1.35674, 1.32659 )
+frames = SubResource( 4 )
+animation = "idle"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+[connection signal="body_entered" from="em1" to="em1" method="_on_em1_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

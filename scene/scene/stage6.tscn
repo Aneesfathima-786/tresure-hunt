@@ -1,0 +1,205 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/sprites/background/bg4.png" type="Texture" id=1]
+[ext_resource path="res://script/car.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/car/001.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/car/000.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/car/002.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/car/003.png" type="Texture" id=6]
+[ext_resource path="res://scene/Thinker trone.tscn" type="PackedScene" id=7]
+[ext_resource path="res://script/enterhop.gd" type="Script" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1024.27, 29.6379 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 166.646, 19.8186 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 58, 58 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 126.434, 147.109 )
+
+[node name="stage6" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 0, -629.933 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 0, 629.933 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -303.582, -277.019 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -887.978, -72.1006 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -1195.35, 295.993 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 1054.95, -11.3842 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -1054.95, 113.844 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -201.123, 1328.17 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 166.97, 113.843 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 690.65, -136.612 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 693.889, 110.326 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 547.227, 271.313 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 314.654, 271.172 )
+shape = SubResource( 2 )
+
+[node name="car" type="KinematicBody2D" parent="."]
+position = Vector2( -938.837, -382.4 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="car"]
+frames = SubResource( 3 )
+animation = "right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="car"]
+shape = SubResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="car"]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_left = -1024
+limit_top = -600
+limit_right = 1024
+limit_bottom = 600
+editor_draw_limits = true
+
+[node name="container" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Thinker trone" parent="container" instance=ExtResource( 7 )]
+position = Vector2( -623.528, -394.585 )
+a = 2
+
+[node name="Thinker trone8" parent="container" instance=ExtResource( 7 )]
+position = Vector2( 919.569, -522.737 )
+a = 2
+
+[node name="Thinker trone2" parent="container" instance=ExtResource( 7 )]
+position = Vector2( 383.836, 358.104 )
+a = 3
+
+[node name="Thinker trone14" parent="container" instance=ExtResource( 7 )]
+position = Vector2( 538.918, -530.605 )
+a = 3
+
+[node name="Thinker trone4" parent="container" instance=ExtResource( 7 )]
+position = Vector2( 362.598, -378.952 )
+a = 4
+
+[node name="Thinker trone12" parent="container" instance=ExtResource( 7 )]
+position = Vector2( -382.312, 177.397 )
+a = 4
+
+[node name="Thinker trone5" parent="container" instance=ExtResource( 7 )]
+position = Vector2( -64.5524, -381.268 )
+a = 2
+
+[node name="Thinker trone9" parent="container" instance=ExtResource( 7 )]
+position = Vector2( 191.937, -528.433 )
+a = 2
+
+[node name="Thinker trone7" parent="container" instance=ExtResource( 7 )]
+position = Vector2( -246.146, -516.13 )
+a = 2
+
+[node name="Thinker trone13" parent="container" instance=ExtResource( 7 )]
+position = Vector2( -72.0501, 464.863 )
+a = 2
+
+[node name="Thinker trone6" parent="container" instance=ExtResource( 7 )]
+position = Vector2( 941.746, -33.2511 )
+
+[node name="Thinker trone10" parent="container" instance=ExtResource( 7 )]
+position = Vector2( 937.541, -264.512 )
+
+[node name="Thinker trone3" parent="container" instance=ExtResource( 7 )]
+position = Vector2( 662.967, -380.7 )
+a = 2
+
+[node name="Thinker trone11" parent="container" instance=ExtResource( 7 )]
+position = Vector2( 793.929, 503.444 )
+a = 2
+
+[node name="enterhop" type="Area2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enterhop"]
+position = Vector2( -877.887, 110.993 )
+shape = SubResource( 5 )
+[connection signal="body_entered" from="enterhop" to="enterhop" method="_on_enterhop_body_entered"]

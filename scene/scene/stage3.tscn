@@ -1,0 +1,181 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://stage3.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/background/bg2.png" type="Texture" id=2]
+[ext_resource path="res://scene/enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://script/some_person_script/PathFollow2D.gd" type="Script" id=6]
+[ext_resource path="res://script/door3.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2051.4, 37.4779 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1011.38, 31.8229 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 240.451, 31.823 )
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -1866.14, 1475.79, 0, 0, 0, 0, 2073.69, 1443.03 )
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 107.722, 10 )
+
+[node name="stage3" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -7.78149, 1229.46 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -7.78149, -1239.16 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 2070.58, -467.72 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -2086.14, -68.3842 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -25.9333, -340.658 )
+rotation = -2.99848
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -199.668, 408.412 )
+rotation = 0.261799
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 1669.95, 208.744 )
+rotation = 5.79084
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -254.123, -735.141 )
+rotation = 5.82986
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -1143.55, -90.7581 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 1461.21, 353.957 )
+rotation = 0.282592
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 1896.84, 317.653 )
+rotation = 2.62496
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 2078.36, 390.26 )
+rotation = 3.49378
+shape = SubResource( 3 )
+
+[node name="enemy" parent="Sprite" instance=ExtResource( 3 )]
+position = Vector2( -1491.71, 1030.89 )
+
+[node name="player" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1948.1, 1040.76 )
+
+[node name="Camera2D2" type="Camera2D" parent="player"]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_left = -2048
+limit_top = -1200
+limit_right = 2048
+limit_bottom = 1200
+editor_draw_limits = true
+
+[node name="coin" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1833.31, -435.639 )
+
+[node name="coin2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1551.96, -381.184 )
+
+[node name="coin3" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1270.61, -353.957 )
+
+[node name="coin4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1424.9, 562.701 )
+
+[node name="coin5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1751.63, 617.156 )
+
+[node name="coin6" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1606.42, 1043.72 )
+
+[node name="coin7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 383.602, 1070.64 )
+
+[node name="coin8" parent="." instance=ExtResource( 5 )]
+position = Vector2( -205.942, 1063.6 )
+
+[node name="coin9" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1642.72, 535.473 )
+
+[node name="coin14" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1461.21, 408.412 )
+
+[node name="coin11" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1470.28, 172.441 )
+
+[node name="coin12" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1878.69, 226.896 )
+
+[node name="coin13" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1851.47, 481.019 )
+
+[node name="coin10" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1679.03, 108.91 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( -130.561, -783.643 )
+curve = SubResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+editor/display_folded = true
+position = Vector2( -1866.14, 1475.79 )
+rotation = -0.0108095
+rotate = false
+script = ExtResource( 6 )
+
+[node name="emeny" type="Node2D" parent="Path2D/PathFollow2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="enemy" parent="Path2D/PathFollow2D/emeny" instance=ExtResource( 3 )]
+side = 3
+
+[node name="door3" type="Area2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door3"]
+position = Vector2( 270.582, 571.85 )
+rotation = 0.255121
+shape = SubResource( 5 )
+[connection signal="body_entered" from="door3" to="door3" method="_on_door3_body_entered"]

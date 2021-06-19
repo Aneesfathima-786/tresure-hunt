@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://script/chapter6.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/background/bg5.png" type="Texture" id=2]
+[ext_resource path="res://assets/all dialogs/ch6/3.png" type="Texture" id=3]
+[ext_resource path="res://assets/all dialogs/ch6/2.png" type="Texture" id=4]
+[ext_resource path="res://assets/all dialogs/ch6/1.png" type="Texture" id=5]
+[ext_resource path="res://scene/nextx.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/backx.tscn" type="PackedScene" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+} ]
+
+[node name="chapter6" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Sprite"]
+current = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "3"
+
+[node name="nextx" parent="." instance=ExtResource( 6 )]
+
+[node name="backx" parent="." instance=ExtResource( 7 )]
+[connection signal="pressed" from="nextx" to="." method="_on_nextx_pressed"]
+[connection signal="pressed" from="backx" to="." method="_on_backx_pressed"]
